@@ -7,7 +7,11 @@ SocialNetworkApp::Application.routes.draw do
   root :to => 'homes#index'
   resources :users
   resources :sessions
-
+  #get "edit" => "users#edit", :as => "edit"
+ # match "/users/edit/:id" => "users#edit"
+  #match "/users/:id" => "users#destroy"
+  #get "destroy" => "users#destroy", :as => "destroy"
+  #match "/destroy" => "users#destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

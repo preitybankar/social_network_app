@@ -17,9 +17,7 @@
 	<div id="crumbs"><a href="/">Home</a> &nbsp;/&nbsp; <span class="current">Sign Up</span></div>	
 	<div class="entry">
 	
-	<!--Sign Up FORM--> -->
-
-<h1>Sign Up</h1>  
+	<!--Sign Up FORM--> -->  
    
  <%= form_for @user do |f| %>  
    <% if @user.errors.any? %>  
@@ -31,19 +29,73 @@
          <% end %>  
        </ul>  
      </div>  
-   <% end %>  
-   <p>  
-     <%= f.label :email, "Email: " %> 
-     <%= f.text_field :email %>  
-     <br />
-     <%= f.label :password, "New Password: " %> 
-     <%= f.password_field :password %>  
-     <br />
-     <%= f.label :password_confirmation, "Re-enter Password: " %>  
-     <%= f.password_field :password_confirmation %>  
+   <% end %>
+     
+   <table border="0px" cellspacing="5" >
+   	
+   	<tr>
+   		<td><font size="5" color="blue">Sign Up</font></td>
+   	</tr>
+   	
+   	<tr>
+   		<td><font size="2" color="blue">Its free and always will be</font></td>
+   	</tr>
+   	
+   	<tr>
+   		<td align="right"><p><%= f.label :email, "Email: " %></p></td> 
+        <td><%= f.text_field :email %></td>
+     </tr>
+    
+    <tr>
+    	 <td align="right"><p><%= f.label :password, "New Password: " %></p></td> 
+         <td><%= f.password_field :password %> </td>
+    </tr>
+     
+     <tr>
+     	<td align="right"><p><%= f.label :password_confirmation, "Re-enter Password: " %></p></td>  
+        <td><%= f.password_field :password_confirmation %></td>
+     </tr>
+   	 
+   	 <tr>
+   	 	<td align="right"><p><%= f.label :first_name, "First Name: " %></p></td> 
+        <td><%= f.text_field :first_name %></td>  
+     </tr>
+     
+     <tr>
+     	<td align="right"><p><%= f.label :last_name, "Last Name: " %></p></td> 
+        <td><%= f.text_field :last_name %></td> 
+     </tr>
+     
+     <tr>
+     	<td align="right"><p><%= f.label :gender, "Gender: " %></p></td> 
+     <!-- <%= f.text_field :gender %> -->
+    <!--  <%= f.select :gender, [['Select'], ['Male'], ['Female']]%> -->
+     <td><p><%= f.radio_button :gender, 'male' %> Male <%= f.radio_button :gender, 'female' %> Female</p></td>
+    </tr>
+     
+     <tr>
+     	<td align="right"><p> <%= f.label :date_of_birth, "Date of Birth: " %></p></td> 
+     <td><%= f.text_field :date_of_birth %></td>  
+     </tr>
+     
+     <tr><td></td>
+     	<td><p>	By clicking Sign Up, you agree to our Terms and that </p></td>
+     </tr>
+     
+     <tr><td></td>
+     	<td><p>	you have read our Data Use Policy, including our</p></td>
+     </tr>
+     
+     <tr><td></td>
+     	<td><p>	Cookie Use.</p></td>
+     </tr>
+     
+    <tr>
+    	<td></td>
+   		<td><p class="button"><%= f.submit "Sign Up"%></p></td>
+   	</tr>
    
-    </p>
-   <p class="button"><%= f.submit "Sign Up"%></p>  
+     
  <% end %>
 
  <!--end contact form-->
